@@ -22,6 +22,18 @@ mvn install:install-file -Dfile=D:\apache-tomcat-7.0.52\webapps\spring1\WEB-INF\
 <h4>final-ui<h4>
 所有service都加载到这一个容器里,也是启动模块.目前仅有login.jsp,一个文件上传的页面.
 <br><br>
+<h4>final-bank<h4>
+银行模块
+<br><br>
+<h4>final-order<h4>
+订单模块
+<br><br>
+<h4>final-quotation<h4>
+实时行情模块
+<br><br>
+<h4>final-acc<h4>
+金额账户模块
+<br><br>
 <h4>final-generator<h4>
 获取数据库连接通过插件,模板和generator生成 model,mapper,service和controller.
 
