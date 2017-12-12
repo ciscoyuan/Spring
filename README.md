@@ -17,7 +17,7 @@ mvn install:install-file -Dfile=D:\apache-tomcat-7.0.52\webapps\spring1\WEB-INF\
 放置配置文件
 <br><br>
 <h4>final-sys<h4>
-目前只有简单上传接口的模块.
+用户和商品模块
 <br><br>
 <h4>final-ui<h4>
 所有service都加载到这一个容器里,也是启动模块.目前仅有login.jsp,一个文件上传的页面.
