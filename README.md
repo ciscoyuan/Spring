@@ -1,6 +1,6 @@
 # Spring
 <b>简介</b>:悍跳的预言家表示不咋会前端,所以界面就别太建议了...<br>
-<br>准备先做一个分布式流计算虚拟币交易系统.后续会慢慢把disruotor,redis,netty弄进来...storm就不要了...不太好用...
+<br>准备先做一个分布式流计算虚拟币交易系统的demo.后续会慢慢把disruotor,redis,netty弄进来...storm就不要了...不太好用...
 <h2>MODEL<h2>
 <h4>final<h4>
 根目录.放置通用jar包.
