@@ -1,5 +1,6 @@
 # Spring
-<b>简介</b>:项目暂时用了spring+springmvc+maven+dubbox+generator,目前只是搭了最基础了内容,会持续融于各种功能.想启动这个项目得自己去先安装zk和dubbox.不详细介绍了.<br>
+<b>简介</b>:悍跳的语言表示不太会ui,所以界面就别太建议了...<br>
+<br>准备先做一个分布式流计算虚拟币交易系统.后续会慢慢把disruotor,redis,netty弄进来...storm就不要了...不太好用...
 <h2>MODEL<h2>
 <h4>final<h4>
 根目录.放置通用jar包.
