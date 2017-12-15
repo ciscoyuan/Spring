@@ -1,0 +1,14 @@
+package ${service_pkg};
+
+import com.yims.sdk.base.BaseService;
+import ${dao_pkg_model}.${model};
+import ${dao_pkg_model}.${model}Example;
+
+/**
+ * ${model} Service接口
+ * @author auto generate v${gen_version}
+ * @version 1.0, ${ctime}
+ */
+public interface ${model}Service extends BaseService<${model}, ${model}Example> {
+
+}
