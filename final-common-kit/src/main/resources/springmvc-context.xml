@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop  
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd ">                          
+          
+    <!-- mvc的注解驱动 -->  
+    <mvc:annotation-driven/>
+    <!-- 一旦有扫描器的定义mvc:annotation-driven不需要，扫描器已经有了注解驱动的功能 -->  
+    <context:component-scan base-package="com.finals.*.web.controller"/>  
+      
+    <!-- 前缀+ viewName +后缀 -->  
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <!-- webroot到某一指定的文件夹的路径 -->  
+        <property name="prefix" value="/WEB-INF/jsp/"></property>  
+        <!-- 视图名称的后缀 -->  
+        <property name="suffix" value=".jsp"></property>  
+    </bean>  
+      
+    <!-- id="multipartResolver"必须是multipartResolver -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <!-- maxUploadSize:文件上传的最大值以byte为单位 -->  
+        <property name="maxUploadSize" value="-1"></property>  
+    </bean>  
+    
+    <!-- 启用跨域请求 -->
+	<mvc:cors>
+    	<mvc:mapping path="/**" allowed-origins="*" allow-credentials="true" max-age="1800" allowed-methods="GET,POST"/>
+	</mvc:cors>
+            
+    <mvc:interceptors>
+    
+    <mvc:interceptor>
+    <mvc:mapping path="/**"/> 
+    <mvc:exclude-mapping path="/login"/> 
+    <bean class="com.finals.common.web.LoginInterceptor" />
+    </mvc:interceptor>
+    
+    <mvc:interceptor>
+    <mvc:mapping path="/**"/> 
+    <bean class="com.finals.common.web.SessionInterceptor" />
+    </mvc:interceptor>
+	</mvc:interceptors> 
+	
+    <mvc:default-servlet-handler />
+    
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+   	 <property name="exceptionMappings">
+         <props>
+            <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到XXX页面 -->
+               <prop
+                  key="org.springframework.web.multipart.MaxUploadSizeExceededException">跳转XXX页面</prop>
+         </props>
+      </property>
+    </bean>
+    
+</beans>
