@@ -8,7 +8,7 @@
 <h4>final-common<h4>
 放置业务模块的公共类.
 <br><br>
-<h4>final-api<h4>
+<h4>final-api（dubbox没引入,现在不需要安装zk和dubbox就能启动.不过想用cluster你得先给linux装ruby环境）<h4>
 <p>dubbox提供rest服务的模块.所以需要安装dubbox和api.用dubbox后就不用每次再用httpclient来调用了,会相对方便些.</p>
 给出下载地址和下载后的cmd命令.<br>网盘链接: https://pan.baidu.com/s/1eRUQ7XC 
 安装到jar包到仓库
